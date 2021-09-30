@@ -16,3 +16,15 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
+
+/**
+ * enqueue script
+ */
+if (!function_exists('affiliate_rel_manager_scripts')) {
+    function affiliate_rel_manager_scripts(){
+        wp_register_script('affiliate-rel-manager-scripts', plugins_url('assets/js/affiliate-script.js', __FILE__), array('jquery'), time(),  true);
+        wp_enqueue_script( 'jquery' );
+        wp_enqueue_script('affiliate-rel-manager-scripts');
+    }
+}
+add_action('wp_enqueue_scripts', 'affiliate_rel_manager_scripts');
