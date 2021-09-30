@@ -28,3 +28,14 @@ if (!function_exists('affiliate_rel_manager_scripts')) {
     }
 }
 add_action('wp_enqueue_scripts', 'affiliate_rel_manager_scripts');
+
+/**
+ * enqueue admin style
+ */
+if (!function_exists('affiliate_rel_manager_admin_style')) {
+    function affiliate_rel_manager_admin_style(){
+        wp_register_style('affiliate-rel-manager-style', plugins_url('assets/css/affiliate-style.css', __FILE__), false, time(), 'all');
+        wp_enqueue_style('affiliate-rel-manager-style');
+    }
+}
+add_action('admin_enqueue_scripts', 'affiliate_rel_manager_admin_style');
