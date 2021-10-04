@@ -19,7 +19,16 @@ if (!defined('ABSPATH')) {
 
 define('ARM_PATH',plugin_dir_path(__FILE__));
 
-require_once( ARM_PATH . '/admin/csf.php');
+/**
+ * Codestar framework integration
+ */
+if( file_exists( ARM_PATH . '/admin/codestar-framework/codestar-framework.php' ) ){
+    require_once( ARM_PATH . '/admin/codestar-framework/codestar-framework.php' );
+}
+
+if( file_exists( ARM_PATH . '/admin/csf.php' ) ){
+    require_once( ARM_PATH . '/admin/csf.php' );
+}
 
 /**
  * enqueue script
