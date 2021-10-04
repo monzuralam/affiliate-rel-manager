@@ -17,6 +17,8 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+define('ARM_PATH',plugin_dir_path(__FILE__));
+
 /**
  * enqueue script
  */
