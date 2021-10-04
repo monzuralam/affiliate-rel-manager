@@ -31,6 +31,21 @@ if( file_exists( ARM_PATH . '/admin/csf.php' ) ){
 }
 
 /**
+ * Data
+ */
+if(!function_exists('affiliate_rel_manager_data')){
+    function affiliate_rel_manager_data(){
+        $affiliateData = get_option('affiliate_link_manager')['affiliate-link'];
+        $totalAffiliate = count($affiliateData);
+        $value = '';
+        for($i=0;$i<$totalAffiliate;$i++){
+            $value .= 'a[href^="'.$affiliateData[$i]['affiliate-link-url'].'",';
+        }
+        return $value;
+    }
+}
+
+/**
  * enqueue script
  */
 if (!function_exists('affiliate_rel_manager_scripts')) {
@@ -38,6 +53,9 @@ if (!function_exists('affiliate_rel_manager_scripts')) {
         wp_register_script('affiliate-rel-manager-scripts', plugins_url('assets/js/affiliate-script.js', __FILE__), array('jquery'), time(),  true);
         wp_enqueue_script( 'jquery' );
         wp_enqueue_script('affiliate-rel-manager-scripts');
+        wp_localize_script('affiliate-rel-manager-scripts','affiliateLinkData',[
+            'affiliateURL'  =>  affiliate_rel_manager_data()
+        ]);
     }
 }
 add_action('wp_enqueue_scripts', 'affiliate_rel_manager_scripts');
