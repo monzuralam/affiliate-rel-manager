@@ -19,6 +19,8 @@ if (!defined('ABSPATH')) {
 
 define('ARM_PATH',plugin_dir_path(__FILE__));
 
+require_once( ARM_PATH . '/admin/csf.php');
+
 /**
  * enqueue script
  */
