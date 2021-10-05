@@ -23,7 +23,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     public $args         = array(
 
       // framework title
-      'framework_title'         => 'Affiliate Link Manager <small>by <a href="https://profiles.wordpress.org/monzuralam" target="_blank">Monzur Alam</a></small>',
+      'framework_title'         => 'Affiliate Rel Manager <small>by <a href="https://profiles.wordpress.org/monzuralam" target="_blank">Monzur Alam</a></small>',
       'framework_class'         => '',
 
       // menu settings
