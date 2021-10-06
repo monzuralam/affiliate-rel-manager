@@ -14,8 +14,9 @@ if (class_exists('CSF')) {
     // Create options
     //
     CSF::createOptions($prefix, array(
-        'menu_title' => 'Affiliate Link Manager',
-        'menu_slug'  => 'affiliate-link-manager',
+        'menu_title' => 'Affiliate Rel Manager',
+        'menu_slug'  => 'affiliate-rel-manager',
+        'menu_icon' =>  'dashicons-admin-links',
     ));
 
     //
